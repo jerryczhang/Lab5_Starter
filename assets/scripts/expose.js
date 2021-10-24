@@ -43,8 +43,10 @@ function init() {
   });
 
   playButton.addEventListener('click', function() {
-    audio.play();
-    if (dropdown.value == 'party-horn') {
+    if (dropdown.value != 'select') {
+      audio.play();
+    }
+    if (dropdown.value == 'party-horn' && vol.value > 0) {
       jsConfetti.addConfetti();
     }
   });
